@@ -1,0 +1,162 @@
+<div class="container-fluid mt-5 px-xl-5 mt-5">
+            <div class="row">
+                <div class="filter col-lg-3 col-md-4 col-sm-12">
+                    <div class="filter_price box_filter">
+                        <div class="filter_name">
+                            <h4>filter by price</h4>
+                        </div>
+                        <div class="filter_options">
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" checked id="price_1">
+                                <label for="price_1">All price</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="price_2">
+                                <label for="price_2">$100-$200</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="price_3">
+                                <label for="price_3">$200-$300</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="price_4">
+                                <label for="price_4">$300-$400</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="price_5">
+                                <label for="price_5"> >500 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_color box_filter">
+                        <div class="filter_name">
+                            <h4>filter by color</h4>
+                        </div>
+                        <div class="filter_options">
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_color" id="color_1" checked>
+                                <label for="color_1">All color</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_color" id="color_2" value="">
+                                <label for="color_2">Black</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_color" id="color_3" value="">
+                                <label for="color_3">White</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_color" id="color_4" value="">
+                                <label for="color_4">Red</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_color" id="color_5" value="">
+                                <label for="color_5">Blue</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_color" id="color_6" value="">
+                                <label for="color_6">Green</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_color box_filter">
+                        <div class="filter_name">
+                            <h4>filter by size</h4>
+                        </div>
+                        <div class="filter_options">
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" checked id="size_1">
+                                <label for="size_1">All size</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="size_2">
+                                <label for="size_2">XS</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="size_3">
+                                <label for="size_3">S</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="size_4">
+                                <label for="size_4">M</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="size_5">
+                                <label for="size_5">L</label>
+                            </div>
+                            <div class="option_check">
+                                <input type="checkbox" name="filter_price" id="size_6">
+                                <label for="size_6">XL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop_products col-lg-9 col-md-8 col-sm-12">
+                    <div class="show_control">
+                        <div class="show_option">
+                            <i class="fas fa-bars"></i>
+                            <i class="fa fa-th-large"></i>
+                        </div>
+                        <div class="show_sort">
+                            <div class="sorting">
+                                <button>Sorting <i class="fas fa-sort-down"></i></button>
+                                <ul class="sort_list">
+                                    <li>Lastest</li>
+                                    <li>Popularity</li>
+                                    <li>Best rating</li>
+                                </ul>
+                            </div>
+                            <div class="showing">
+                                <button>Showing <i class="fas fa-sort-down"></i></button>
+                                <ul class="sort_list">
+                                    <li>10</li>
+                                    <li>20</li>
+                                    <li>30</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contain">
+                        <div class="product_list row mb-4">
+                            {{#each listProduct}}
+                            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                                <div class="box_product">
+                                    <div class="product_img mb-3">
+                                        <img src="{{this.AnhSanPham}}" alt="">
+                                        <div class="product_action">
+                                            <a val="{{this.MaSP}}" class="action addToCart"><i class="fas fa-cart-plus"></i></a>
+                                            <a href="#" class="action"><i class="far fa-heart"></i></a>
+                                            <a href="/products/{{this.TenSP}}" class="action"><i class="fas fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_infor pb-3">
+                                        <a href="/products/{{this.TenSP}}" class="product_name">{{this.TenSP}}</a>
+                                        <div class="product_price mt-3">
+                                            <div class="new_price vnd">{{this.GiaTien}}</div>
+                                            <div class="old_price">$200.00</div>
+                                        </div>
+                                        <div class="rating mt-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- move page -->
+                    <div class="container-fluid mt-4 move_page">
+                        <a href="" class="move_page-btn">Previous</a>
+                        <a href="" class="active move_page-btn">1</a>
+                        <a href="" class="move_page-btn">2</a>
+                        <a href="" class="move_page-btn">3</a>
+                        <a href="" class="move_page-btn">4</a>
+                        <a href="" class="move_page-btn">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>

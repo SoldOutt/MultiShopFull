@@ -1,0 +1,49 @@
+/*tablet*/
+@media screen and (max-width: 992px){
+	.search{
+		display: none;
+
+	}
+	.login{
+		display: none;
+	}
+	.hide_lg{
+		display: block;
+	}
+	.user_product{
+		display: none;
+	}
+	.login a{
+		color: #fff;
+		padding: 25px 0;
+	}
+	.login a:hover{
+		color: var(--primary-color);
+	}
+	.header_top .logo{
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 767px){
+	section .contain .box_img{
+		display: none;
+	}
+	.nav_bar-list{
+		flex-direction: row-reverse;
+	}
+	.nav_bar-list ul{
+		display: none;
+	}
+	.nav_bar-categories{
+		padding-right: unset;
+	}
+}
+@media screen and (max-width: 575px){
+	.nav_bar-categories{
+		display: none;
+	}
+	.login a{
+		color: #fff;
+		line-height: 70px;
+	}
+}

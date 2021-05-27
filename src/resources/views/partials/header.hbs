@@ -1,0 +1,72 @@
+<div class="header_top">
+            <div class="logo">
+                <a href="/">
+                    <p>multi<span>shop</span></p>
+                </a>
+            </div>
+            <div class="search">
+                <form action="">
+                    <input type="text" id="search_input" placeholder="Tìm kiếm">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="login">
+                {{#if user}}
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                <h3 class="dropdown-toggle" style="cursor: pointer; color:var(--dark)" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{user.userName}}
+                </h3>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Trang cá nhân</a></li>
+                    <li><a class="dropdown-item" href="#">Sản phẩm yêu thích</a></li>
+                    <li><a class="dropdown-item" href="/products/addProduct">Thêm sản phẩm bán</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/me/logout">Đăng xuất</a></li>
+                </ul>
+                </div>
+                {{else}}
+                <a href="/me/login"><i class="fas fa-user"></i>Đăng nhập</a>
+                {{/if}}
+            </div>
+        </div>
+        <!-- navbar -->
+        <div class="nav_bar container-fluid px-xl-5 ">
+            <div class="row">
+                <div class="nav_bar-categories col-lg-3 col-md-4 col-sm-6">
+                    <div class="categories_menu">
+                        <p><i class="fas fa-bars"></i>Categories</p>
+                        <i class="far fa-chevron-down"></i>
+                        <ul class="categories_list">
+                            <li><a href="">Shirts</a></li>
+                            <li><a href="">Jeans</a></li>
+                            <li><a href="">Jackets</a></li>
+                            <li><a href="">Shoes</a></li>
+                            <li><a href="">Jumpsuits</a></li>
+                            <li><a href="">Dresses</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav_bar-list col-lg-9 col-md-8 col-sm-6">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a class="" href="/products">Shop</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                    <div class="user_product">
+                        <a href="#" class="user_like">
+                            <i class="fas fa-heart"></i>
+                            <span class="number_like">0</span>
+                        </a>
+                        <a href="/me/shop-cart" class="user_buy">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="product_in_cart" class="number_buy">{{#if user}}{{user.ProductInCart}}{{else}}0{{/if}}</span>
+                        </a>
+                    </div>
+                    <div class="hide_lg login">
+                        <a href="login" class="">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>

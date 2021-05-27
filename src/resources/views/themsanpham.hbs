@@ -1,0 +1,26 @@
+<form method="POST">
+    <label for="">Tên SP</label><input type="text" name="tensp">
+    <br>
+    <label for="">Danh mục</label>
+    {{#each danhmuc}}
+        <input type="radio" name="madm" value="{{this.MaDM}}">{{this.TenDM}}
+    {{/each}}
+    <br>
+    <label for="">Giá tiền</label><input type="text" name="giatien">
+    <br>
+    <label for="">Ảnh sản phẩm</label><input type="file" onchange="openFile(event)">
+    <input type="text" hidden name="img" id="addImgForProduct">
+    <div class="imgProductAdd"><img id='output'></div>
+    <br>
+    <label for="">Giới thiệu</label><input type="text" name="gioithieu">
+    <br>
+    <label for="">Mô tả</label><input type="text" name="mota">
+    <br>
+    <label for="">Thương hiệu</label><input type="text" name="thuonghieu">
+    <br>
+    <label for="">Xuất xứ</label><input type="text" name="xuatxu">
+    <br>
+    <label for="">Chat lieu</label><input type="text" name="chatlieu">
+    <br>
+    <button>Theem</button>
+</form>

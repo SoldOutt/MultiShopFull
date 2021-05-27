@@ -1,0 +1,62 @@
+<div class="shopping_cart container-fluid px-xl-5 mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <table>
+                        <thead>
+                            <td>Products</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total</td>
+                            <td>Remove</td>
+                        </thead>
+                        <tbody>
+                            {{#each products}}
+                            <tr>
+                                <td>
+                                    <img src="{{this.AnhSanPham}}" alt="">{{this.TenSP}}
+                                </td>
+                                <td>{{this.GiaTien}}</td>
+                                <td>
+                                    <div class="product_number">
+                                        <button class="product_reduce">-</button>
+                                        <input type="text" class="number_of_product" value="1">
+                                        <button class="product_add">+</button>
+                                    </div>
+                                </td>
+                                <td>{{this.GiaTien}}</td>
+                                <td><button  class="remove_out_cart" val = '{{this.MaSP}}'><span>x</span></button></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-4">
+                    <div class="coupon_code">
+                        <input type="text" placeholder="Coupon Code">
+                        <button>Apply Coupon</button>
+                    </div>
+                    <div class="pay_cart">
+                        <div class="cart_summary">
+                            <h3>CART SUMMARY</h3>
+                        </div>
+                        <div class="cart_total">
+                            <div class="">
+                                <p>Subtotal</p>
+                                <p id="total_cart" class="vnd">$150</p>
+                            </div>
+                            <div class="">
+                                <p>Shipping</p>
+                                <p>$10</p>
+                            </div>
+                            <div class="cart_buy">
+                                <div class="">
+                                    <p>Total</p>
+                                    <p>$160</p>
+                                </div>
+                                <button>Buy it</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

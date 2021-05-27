@@ -1,0 +1,37 @@
+<section>
+        <div class="contain">
+            <!-- Sign In -->
+            <div class="user box_signIn">
+                <div class="box_img">
+                    <img src="/img/login.jpg" alt="">
+                </div>
+                <div class="box_form">
+                    <form method="post" action="/me/login">
+                        <h2>Sign In</h2>
+                        <input type="text" placeholder="Username" name="userName">
+                        <input type="password" placeholder="Password" name="userPassword">
+                        <input type="submit" value="Sign In">
+                        <p>If you don't have an account? <span onclick="Login_toggle()">Sign up</span></p>
+                    </form>
+                </div>
+            </div>
+            <!-- Sign Up -->
+            <div class="user box_signUp">
+                <div class="box_img">
+                    <img src="/img/signup.jpg" alt="">
+                </div>
+                <div class="box_form">
+                    <form method="post" action="/me/signup">
+                        <h2>Sign Up</h2>
+                        <input type="text" placeholder="Username" name="username">
+                        <input type="email" placeholder="Email" name="email">
+                        <input type="text" placeholder="Phone number" name="phonenumber">
+                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Confirm Password" name="confirmpassword">
+                        <input type="submit" value="Sign Up">
+                        <p>If you have an account? <span onclick="Login_toggle()">Sign In</span></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>

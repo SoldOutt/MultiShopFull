@@ -1,0 +1,31 @@
+:root{
+	--white-color:#fff;
+	--black-color: #000;
+	--primary-color: #FFD333;
+	--dark :#3D464D;
+	--gray-dark : #515a63;
+	--second-color:	#6C757D;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html{
+	box-sizing: border-box;
+}
+@keyframes up{
+	0%{
+		transform: translateY(-15px);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+.hide_lg{
+	display: none;
+}
+
+.vnd::after{
+	content: 'đ';
+}

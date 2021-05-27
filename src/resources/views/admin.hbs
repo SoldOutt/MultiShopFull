@@ -1,0 +1,106 @@
+<div class="container-fluid px-xl-5 mt-5">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 adminitration">
+            <div class="bx_admin">
+                <div class="admin_img">
+                    <img src="img/user.jpg" alt="">
+                </div>
+                <div class="link_admin">
+                    <a href="https://www.facebook.com/bautroi.trongxanh.18/"><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="admin_control">
+                <ul>
+                    <li data_review ='0' class="active">Quản lí khách hàng</li>
+                    <li data_review ='1'>Quản lí sản phẩm</li>
+                    <li data_review ='2'>Xem dác đơn hàng</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-8 data">
+            <table class="table data_user table-hover active">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Mã Khách hàng</th>
+                        <th scope="col">Tên đăng nhập</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Số điện thoại</th>
+                        <th scope="col">Mặt khẩu</th>
+                        <th scope="col">Xóa tài khoản</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each listUser}}
+                    <tr>
+                        
+                        <td>{{this.MaKH}}</td>
+                        <td>{{this.TenDangNhap}}</td>
+                        <td>{{this.Email}}</td>
+                        <td>{{this.SoDienThoai}}</td>
+                        <td>{{this.MatKhau}}</td>
+                        <td><button class="remove_user" val="{{this.MaKH}}">x</button></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <table class="table data_product table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Mã Sản phầm</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Ảnh sản phẩm</th>
+                        <th scope="col">Giá Tiền</th>        
+                        <th scope="col">Giới thiệu</th>
+                        <th scope="col">Mô tả</th>
+                        <th scope="col">Thuong hiệu</th>
+                        <th scope="col">Xóa Sản Phẩm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each listProduct}}
+                    <tr>
+                       
+                        <td>{{this.MaSP}}</td>
+                        <td>{{this.TenSP}}</td>
+                        <td><img src="{{this.AnhSanPham}}" width="100px" height="100px" alt=""></td>
+                        <td class="vnd">{{this.GiaTien}}</td>
+                        <td>{{this.GioiThieu}}</td>
+                        <td>{{this.MoTa}}</td>
+                        <td>{{this.ThuongHieu}}</td>
+                        <td><button class="remove_product" val="{{this.MaSP}}">x</button></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <table class="table data_cart table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Tên khách hàng</th>
+                        <th scope="col">Số điện thoại</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Xóa đơn hàng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each listCart}}
+                    <tr>
+                       
+                        <td>{{this.TenDangNhap}}</td>
+                        <td>{{this.SoDienThoai}}</td>
+                        <td>{{this.TenSP}}</td>
+                        <td>{{this.SoLuong}}</td>
+                        <td>{{this.TongTien}}</td>
+                        <td><button class="remove_cart" val='{"MaKH": "{{this.MaKH}}","MaSP": "{{this.MaSP}}"}'>x</button></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

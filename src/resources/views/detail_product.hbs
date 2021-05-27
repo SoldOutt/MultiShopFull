@@ -1,0 +1,246 @@
+<div class="detail_product px-xl-5 mt-5">
+        <div class="row">
+            <div class="col-lg-5 detail_product-img">
+                {{!-- <img src="/img/product-1.jpg" alt="anh san pham">
+                <button class="detail_product-img--next"><i class="fas fa-angle-right"></i></button>
+                <button class="detail_product-img--prev"><i class="fas fa-angle-left"></i></button> --}}
+                <img src="{{product.AnhSanPham}}" alt="Ảnh sản phẩm">
+            </div>
+            <div class="col-lg-7 detail_product-infor">
+                <h3 class="product_name">{{product.TenSP}}</h3>
+                <div class="product_rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="product_price">
+                    <h4>{{product.GiaTien}}đ</h4>
+                </div>
+                <div class="product_description">{{product.MoTa}}</div>
+                <div class="product_size">
+                    <span>Sizes:</span>
+                    <input type="radio" id="size-1" name="size"><label for="size-1">XS</label>
+                    <input type="radio" id="size-2" name="size"><label for="size-2">S</label>
+                    <input type="radio" id="size-3" name="size"><label for="size-3">M</label>
+                    <input type="radio" id="size-4" name="size"><label for="size-4">L</label>
+                    <input type="radio" id="size-5" name="size"><label for="size-5">XL</label>
+                </div>
+                <div class="product_color">
+                    <span>Color:</span>
+                    <input type="radio" id="color-1" name="size"><label for="color-1">Red</label>
+                    <input type="radio" id="color-2" name="size"><label for="color-2">Blue</label>
+                    <input type="radio" id="color-3" name="size"><label for="color-3">Green</label>
+                    <input type="radio" id="color-4" name="size"><label for="color-4">Black</label>
+                    <input type="radio" id="color-5" name="size"><label for="color-5">White</label>
+                </div>
+                <div class="product_cart">
+                    <div class="product_number">
+                        <button class="product_reduce">-</button>
+                        <input type="text" id="number_of_product" value="0">
+                        <button class="product_add">+</button>
+                    </div>
+                    <div class="product_addcart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span val="{{product.MaSP}}" class="addToCart">Add To Cart</span>
+                    </div>
+                </div>
+                <div class="product_share">
+                    <span>Share on: </span>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+        <div class="product_review px-xl-5 mt-5 pt-5 p-3">
+            <div class="product_review-cat">
+                <ul>
+                    <li data-review="0" class="active">Description</li>
+                    <li data-review="1">Information</li>
+                    <li data-review="2">Reviews</li>
+                </ul>
+                <div class="product_review-tab">
+                    <div class="active">
+                        <h3>Product Description</h3>
+                        <p>{{product.GioiThieu}}</p>
+                    </div>
+                    <div class="">
+                        <h3>Additional Information</h3>
+                        <p>{{product.GioiThieu}}</p>
+                        <div class="product_review-information row">
+                            <div class="col-lg-6">
+                                <p>Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
+                                <p>Amet kasd gubergren sit sanctus et lorem eos sadipscing at.</p>
+                                <p>Duo amet accusam eirmod nonumy stet et et stet eirmod.</p>
+                                <p>Takimata ea clita labore amet ipsum erat justo voluptua. Nonumy.</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
+                                <p>Amet kasd gubergren sit sanctus et lorem eos sadipscing at.</p>
+                                <p>Duo amet accusam eirmod nonumy stet et et stet eirmod.</p>
+                                <p>Takimata ea clita labore amet ipsum erat justo voluptua. Nonumy.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-lg-6 box_review">
+                                {{#each dataReview}}
+                                <div class="customer_review mb-3">
+                                    <div class="customer_img">
+                                        <img src="/img/user.jpg" alt="">
+                                    </div>
+                                    <div class="customer_box_review">
+                                        <h5>{{this.TenDangNhap}}<span> - {{this.NgayTao}}</span></h5>
+                                        <div class="customer_review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p>{{this.NoiDung}}</p>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <div class="col-lg-6">
+                                <h3>Leave a review</h3>
+                                <form id="form_review" action="/products/review">
+                                    <input type="text" value="{{product.MaSP}}" hidden name="MaSP">
+                                    <div class="your_rating">
+                                        <p>Your Rating * :</p>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <label for="write_review">Your Review *</label>
+                                    <textarea id="write_review" name="review_conten"></textarea>
+                                    <button type="button">Post</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="featured_product">
+        <div class="container-fluid pt-5 mb-4">
+            <h2 class="mr-3 mx-xl-5 categories_title"><span>Có thể bạn cũng thích</span></h2>
+        </div>
+        <div class="product_list row mx-xl-5 pb-3">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="box_product">
+                    <div class="product_img mb-3">
+                        <img src="/img/product-5.jpg" alt="">
+                        <div class="product_action">
+                            <a href="#" class="action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="action"><i class="fas fa-sync-alt"></i></a>
+                            <a href="#" class="action"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product_infor pb-3">
+                        <a href="detail_product" class="product_name">Product Name Goes Here</a>
+                        <div class="product_price mt-3">
+                            <div class="new_price">$123.00</div>
+                            <div class="old_price">$200.00</div>
+                        </div>
+                        <div class="rating mt-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="box_product">
+                    <div class="product_img mb-3">
+                        <img src="/img/product-6.jpg" alt="">
+                        <div class="product_action">
+                            <a href="#" class="action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="action"><i class="fas fa-sync-alt"></i></a>
+                            <a href="#" class="action"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product_infor pb-3">
+                        <a href="detail_product" class="product_name">Product Name Goes Here</a>
+                        <div class="product_price mt-3">
+                            <div class="new_price">$123.00</div>
+                            <div class="old_price">$200.00</div>
+                        </div>
+                        <div class="rating mt-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="box_product">
+                    <div class="product_img mb-3">
+                        <img src="/img/product-7.jpg" alt="">
+                        <div class="product_action">
+                            <a href="#" class="action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="action"><i class="fas fa-sync-alt"></i></a>
+                            <a href="#" class="action"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product_infor pb-3">
+                        <a href="detail_product" class="product_name">Product Name Goes Here</a>
+                        <div class="product_price mt-3">
+                            <div class="new_price">$123.00</div>
+                            <div class="old_price">$200.00</div>
+                        </div>
+                        <div class="rating mt-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="box_product">
+                    <div class="product_img mb-3">
+                        <img src="/img/product-8.jpg" alt="">
+                        <div class="product_action">
+                            <a href="#" class="action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="action"><i class="fas fa-sync-alt"></i></a>
+                            <a href="#" class="action"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product_infor pb-3">
+                        <a href="detail_product" class="product_name">Product Name Goes Here</a>
+                        <div class="product_price mt-3">
+                            <div class="new_price">$123.00</div>
+                            <div class="old_price">$200.00</div>
+                        </div>
+                        <div class="rating mt-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
